@@ -10,7 +10,7 @@ export default {
             of: [{ type: 'image' }],
             options: {
                 hotspot: true,
-            }
+            },
         },
         {
             name: 'name',
@@ -24,7 +24,7 @@ export default {
             options: {
                 source: 'name',
                 maxLength: 90,
-            }
+            },
         },
         {
             name: 'price',
@@ -35,6 +35,6 @@ export default {
             name: 'details',
             title: 'Details',
             type: 'string',
-        }
-    ]
-}
+        },
+    ],
+};

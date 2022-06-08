@@ -1,23 +1,25 @@
 import React from 'react';
-
 import { client } from '../lib/client';
 import { Product, FooterBanner, HeroBanner } from '../components';
 
-const Home = ({ products, bannerData }) => (
-  <div>
-    <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
-    <div className="products-heading">
-      <h2>Best-sellers</h2>
-      <p>Headphones in black</p>
-    </div>
+const Home = ({ products, bannerData }) => {
+  return (
 
-    <div className="products-container">
-      {products?.map((product) => <Product key={product._id} product={product} />)}
+    <div>
+      <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
+      <div className="products-heading">
+        <h2>Best-sellers</h2>
+        <p>Headphones in black</p>
+      </div>
+      <div className="products-container">
+        {products?.map((product) => (
+          <Product key={product._id} product={product} />
+        ))}
+      </div>
+      <FooterBanner footerBanner={bannerData && bannerData[0]} />
     </div>
-
-    <FooterBanner footerBanner={bannerData && bannerData[0]} />
-  </div>
-);
+  );
+};
 
 // Using Next.js to fetch API data instead of React method
 
@@ -30,7 +32,7 @@ export const getServerSideProps = async () => {
 
   return {
     props: { products, bannerData }
-  }
-}
+  };
+};
 
 export default Home;

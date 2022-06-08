@@ -10,7 +10,7 @@ const Footer = () => {
         <AiOutlineTwitter />
       </p>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
